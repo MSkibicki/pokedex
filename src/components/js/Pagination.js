@@ -1,20 +1,12 @@
 import React from "react";
 
-import Button from "react-bootstrap/Button";
-
 const Pagination = ({ handlePreviousPage, handleNextPage }) => {
   return (
     <div>
       {handlePreviousPage && (
-        <Button onClick={handlePreviousPage} variant="info">
-          Previous Page
-        </Button>
+        <button onClick={handlePreviousPage}>Previous Page</button>
       )}
-      {handleNextPage && (
-        <Button onClick={handleNextPage} variant="info">
-          Next Page
-        </Button>
-      )}
+      {handleNextPage && <button onClick={handleNextPage}>Next Page</button>}
     </div>
   );
 };

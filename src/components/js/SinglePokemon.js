@@ -45,7 +45,7 @@ const SinglePokemon = ({ name, url }) => {
           />
         )}
       <p>#{pokemonId}</p>
-      <p>{name}</p>
+      <h1>{name}</h1>
       <p>Base experience: {base_experience}</p>
       <p>Height: {height}</p>
       <p>Weight: {weight}</p>

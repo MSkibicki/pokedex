@@ -4,10 +4,6 @@ import SinglePokemon from "./SinglePokemon";
 import Pagination from "./Pagination";
 import PokemonFilter from "./PokemonFilter";
 
-// import Container from "react-bootstrap/Container";
-// import Row from "react-bootstrap/Row";
-// import Col from "react-bootstrap/Col";
-
 const App = () => {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -58,9 +54,6 @@ const App = () => {
 
   return (
     <>
-      {/* <Container fluid> */}
-      {/* <Row> */}
-      {/* <Col> */}
       <PokemonFilter handleInput={handleInput} />
       {filterPokemons.map((filteredPokemon) => (
         <SinglePokemon
@@ -73,9 +66,6 @@ const App = () => {
         handlePreviousPage={previousPage ? handlePreviousPage : null}
         handleNextPage={nextPage ? handleNextPage : null}
       />
-      {/* </Col> */}
-      {/* </Row> */}
-      {/* </Container> */}
     </>
   );
 };

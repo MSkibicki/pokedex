@@ -1,8 +1,6 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./components/css/Global.scss";
 import PokemonList from "./components/js/PokemonList";
-
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
@@ -10,6 +8,6 @@ const App = () => {
       <PokemonList />
     </>
   );
-}
+};
 
 export default App;
