@@ -3,6 +3,7 @@ import axios from "axios";
 import SinglePokemon from "./SinglePokemon";
 import Pagination from "./Pagination";
 import PokemonFilter from "./PokemonFilter";
+import Navbar from "./Navbar";
 
 const App = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -54,6 +55,7 @@ const App = () => {
 
   return (
     <>
+      <Navbar />
       <PokemonFilter handleInput={handleInput} />
       {filterPokemons.map((filteredPokemon) => (
         <SinglePokemon

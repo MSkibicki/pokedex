@@ -45,7 +45,16 @@ const SinglePokemon = ({ name, url }) => {
           />
         )}
       <p>#{pokemonId}</p>
-      <h1>{name}</h1>
+      <h1>
+        {name
+          .toLowerCase()
+          .split(" ")
+          .map(
+            (pokemonName) =>
+              pokemonName.charAt(0).toUpperCase() + pokemonName.substring(1)
+          )
+          .join("")}
+      </h1>
       <p>Base experience: {base_experience}</p>
       <p>Height: {height}</p>
       <p>Weight: {weight}</p>
