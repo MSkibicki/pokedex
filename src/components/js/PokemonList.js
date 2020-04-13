@@ -4,9 +4,9 @@ import SinglePokemon from "./SinglePokemon";
 import Pagination from "./Pagination";
 import PokemonFilter from "./PokemonFilter";
 
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+// import Container from "react-bootstrap/Container";
+// import Row from "react-bootstrap/Row";
+// import Col from "react-bootstrap/Col";
 
 const App = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -58,24 +58,24 @@ const App = () => {
 
   return (
     <>
-      <Container fluid>
-        <Row>
-          <Col>
-            <PokemonFilter handleInput={handleInput} />
-            {filterPokemons.map((filteredPokemon) => (
-              <SinglePokemon
-                key={filteredPokemon.name}
-                name={filteredPokemon.name}
-                url={filteredPokemon.url}
-              />
-            ))}
-            <Pagination
-              handlePreviousPage={previousPage ? handlePreviousPage : null}
-              handleNextPage={nextPage ? handleNextPage : null}
-            />
-          </Col>
-        </Row>
-      </Container>
+      {/* <Container fluid> */}
+      {/* <Row> */}
+      {/* <Col> */}
+      <PokemonFilter handleInput={handleInput} />
+      {filterPokemons.map((filteredPokemon) => (
+        <SinglePokemon
+          key={filteredPokemon.name}
+          name={filteredPokemon.name}
+          url={filteredPokemon.url}
+        />
+      ))}
+      <Pagination
+        handlePreviousPage={previousPage ? handlePreviousPage : null}
+        handleNextPage={nextPage ? handleNextPage : null}
+      />
+      {/* </Col> */}
+      {/* </Row> */}
+      {/* </Container> */}
     </>
   );
 };

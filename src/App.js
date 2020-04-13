@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import PokemonList from "./components/PokemonList";
+import PokemonList from "./components/js/PokemonList";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
