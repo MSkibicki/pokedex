@@ -4,6 +4,7 @@ import axios from "axios";
 const SinglePokemon = ({ name, url }) => {
   const [pokemonInfo, setPokemonInfo] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [pokemonId, setPokemonId] = useState();
 
   useEffect(() => {
     const getDetailData = async () => {
@@ -20,6 +21,7 @@ const SinglePokemon = ({ name, url }) => {
 
       setPokemonInfo(getSinglePokemon.data);
       setLoading(false);
+      setPokemonId(pokemonId);
 
       return () => token.cancel();
     };
@@ -27,14 +29,12 @@ const SinglePokemon = ({ name, url }) => {
     getDetailData();
   }, [url]);
 
-
   if (loading) return "Loading...";
 
   const { base_experience, height, weight } = pokemonInfo;
 
   return (
     <div>
-      <h1>{name}</h1>
       {(pokemonInfo || 0) &&
         (pokemonInfo.sprites || 0) &&
         (pokemonInfo.sprites.back_default || 0) && (
@@ -44,6 +44,8 @@ const SinglePokemon = ({ name, url }) => {
             className="pokemon-image"
           />
         )}
+      <p>#{pokemonId}</p>
+      <p>{name}</p>
       <p>Base experience: {base_experience}</p>
       <p>Height: {height}</p>
       <p>Weight: {weight}</p>
