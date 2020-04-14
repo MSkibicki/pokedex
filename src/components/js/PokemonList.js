@@ -16,23 +16,31 @@ const App = () => {
   const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
+    let isCancelled = false;
     const getData = async () => {
       setLoading(true);
 
-      let token;
-      const result = await axios(currentPage, {
-        cancelToken: new axios.CancelToken((c) => (token = c)),
-      });
+      try {
+        const result = await axios(currentPage);
 
-      setLoading(false);
-      setPreviousPage(result.data.previous);
-      setNextPage(result.data.next);
-      setPokemons(result.data.results);
-
-      return () => token.cancel();
+        if (!isCancelled) {
+          setLoading(false);
+          setPreviousPage(result.data.previous);
+          setNextPage(result.data.next);
+          setPokemons(result.data.results);
+        }
+      } catch (e) {
+        if (!isCancelled) {
+          console.error(e);
+        }
+      }
     };
 
     getData();
+
+    return () => {
+      isCancelled = true;
+    };
   }, [currentPage]);
 
   const handlePreviousPage = () => {
