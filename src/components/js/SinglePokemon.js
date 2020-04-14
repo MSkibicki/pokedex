@@ -64,9 +64,9 @@ const SinglePokemon = ({ name, url }) => {
             )
             .join("")}
         </h1>
-        <p>Base experience: {base_experience}</p>
-        <p>Height: {height}</p>
-        <p>Weight: {weight}</p>
+        <p>Base experience: {base_experience} points</p>
+        <p>Height: {height / 10} meters</p>
+        <p>Weight: {weight / 10} kilograms</p>
       </Link>
     </div>
   );
