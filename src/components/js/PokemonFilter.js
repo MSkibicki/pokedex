@@ -1,8 +1,9 @@
 import React from "react";
+import "../css/PokemonFilter.scss";
 
 const PokemonFilter = ({ handleInput }) => {
   return (
-    <div>
+    <div className="filter">
       <label htmlFor="pokemon-filter">Filter pokemon by name.</label>
       <input
         type="text"
@@ -10,6 +11,7 @@ const PokemonFilter = ({ handleInput }) => {
         id="filter"
         placeholder="Start typing pokemon name."
         onChange={handleInput}
+        className="input"
       />
     </div>
   );

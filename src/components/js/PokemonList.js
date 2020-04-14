@@ -4,8 +4,9 @@ import SinglePokemon from "./SinglePokemon";
 import Pagination from "./Pagination";
 import PokemonFilter from "./PokemonFilter";
 import Navbar from "./Navbar";
+import "../css/PokemonList.scss";
 
-const App = () => {
+const PokemonList = () => {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(
@@ -59,25 +60,33 @@ const App = () => {
     return pokemon.name.toLowerCase().includes(inputValue.toLowerCase());
   });
 
-  if (loading) return "Loading...";
-
+  if (loading)
+    return (
+      <div className="loading">
+        <h1 className="loading-text">Loading...</h1>
+      </div>
+    );
   return (
     <>
       <Navbar />
-      <PokemonFilter handleInput={handleInput} />
-      {filterPokemons.map((filteredPokemon) => (
-        <SinglePokemon
-          key={filteredPokemon.name}
-          name={filteredPokemon.name}
-          url={filteredPokemon.url}
+      <div className="pokemon-list">
+        <PokemonFilter handleInput={handleInput} />
+        <div className="pokemon">
+          {filterPokemons.map((filteredPokemon) => (
+            <SinglePokemon
+              key={filteredPokemon.name}
+              name={filteredPokemon.name}
+              url={filteredPokemon.url}
+            />
+          ))}
+        </div>
+        <Pagination
+          handlePreviousPage={previousPage ? handlePreviousPage : null}
+          handleNextPage={nextPage ? handleNextPage : null}
         />
-      ))}
-      <Pagination
-        handlePreviousPage={previousPage ? handlePreviousPage : null}
-        handleNextPage={nextPage ? handleNextPage : null}
-      />
+      </div>
     </>
   );
 };
 
-export default App;
+export default PokemonList;

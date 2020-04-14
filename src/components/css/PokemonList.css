@@ -1,1 +1,18 @@
-/* No CSS *//*# sourceMappingURL=PokemonList.css.map */
+.pokemon-list .pokemon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.pokemon-list .loading {
+  text-align: center;
+  margin-top: 10em;
+  color: #f2f7eb;
+  text-shadow: 2px 2px 2px black;
+}
+/*# sourceMappingURL=PokemonList.css.map */

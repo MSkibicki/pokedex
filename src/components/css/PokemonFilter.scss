@@ -1,0 +1,50 @@
+.filter {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+  margin-bottom: 1em;
+
+  .input {
+    height: 36px;
+    width: 294px;
+    background-color: #f2f7eb;
+    border-radius: 10px;
+    padding: 0 0 0 5px;
+    margin-left: 1em;
+  }
+
+  .input:focus {
+    box-shadow: 5px 5px 5px black;
+    outline: 0;
+  }
+
+  label {
+    height: 40px;
+    align-items: center;
+    display: flex;
+    margin-right: 1em;
+    color: #f2f7eb;
+    font-size: 20px;
+    text-shadow: 2px 2px 2px black;
+  }
+}
+
+@media (max-width: 550px) {
+  .filter {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 550px) {
+  label {
+    margin-bottom: 1em;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .input {
+    margin-left: 0;
+  }
+}

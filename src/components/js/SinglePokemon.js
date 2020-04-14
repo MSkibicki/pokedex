@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "../css/SinglePokemon.scss";
 
 const SinglePokemon = ({ name, url }) => {
   const [pokemonInfo, setPokemonInfo] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [pokemonId, setPokemonId] = useState();
 
   useEffect(() => {
     let isCancelled = false;
     const getDetailData = async () => {
       const pokemonId = url.split("/")[url.split("/").length - 2];
-      setLoading(true);
 
       try {
         const result = await axios(
@@ -20,7 +19,6 @@ const SinglePokemon = ({ name, url }) => {
 
         if (!isCancelled) {
           setPokemonInfo(result.data);
-          setLoading(false);
           setPokemonId(pokemonId);
         }
       } catch (e) {
@@ -37,13 +35,12 @@ const SinglePokemon = ({ name, url }) => {
     };
   }, [url]);
 
-  if (loading) return "Loading...";
-
   const { base_experience, height, weight } = pokemonInfo;
 
   return (
-    <div>
+    <div className="single-pokemon">
       <Link to={`singlePokemonDetails/${pokemonId}`}>
+        <h3 className="pokemon-number">#{pokemonId}</h3>
         {(pokemonInfo || 0) &&
           (pokemonInfo.sprites || 0) &&
           (pokemonInfo.sprites.back_default || 0) && (
@@ -53,8 +50,7 @@ const SinglePokemon = ({ name, url }) => {
               className="pokemon-image"
             />
           )}
-        <p>#{pokemonId}</p>
-        <h1>
+        <h1 className="pokemon-name">
           {name
             .toLowerCase()
             .split(" ")

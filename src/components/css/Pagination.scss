@@ -1,0 +1,38 @@
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3em;
+  margin-top: 1em;
+
+  .button-previous {
+    height: 40px;
+    width: 150px;
+    background-color: #f2f7eb;
+    border-radius: 10px;
+    margin-right: 1em;
+    background: linear-gradient(120deg, #fff, #000);
+    color: #f2f7eb;
+  }
+
+  .button-next {
+    height: 40px;
+    width: 150px;
+    background-color: #f2f7eb;
+    border-radius: 10px;
+    margin-left: 1em;
+    background: linear-gradient(120deg, #fff, #000);
+    color: #f2f7eb;
+  }
+
+  .button-previous:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 5px black;
+    outline: 0;
+  }
+
+  .button-next:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 5px black;
+    outline: 0;
+  }
+}
