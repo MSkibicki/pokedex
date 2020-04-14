@@ -1,4 +1,9 @@
-.single-pokemon {
+.pokemon-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.pokemon-link .single-pokemon {
   background-color: #f2f7eb;
   border-radius: 5%;
   display: -webkit-box;
@@ -16,7 +21,7 @@
   width: 450px;
 }
 
-.single-pokemon .pokemon-number {
+.pokemon-link .single-pokemon .pokemon-number {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,12 +39,12 @@
   background: linear-gradient(120deg, #fff, #000);
 }
 
-.single-pokemon .pokemon-name {
+.pokemon-link .single-pokemon .pokemon-name {
   font-family: "Lobster", cursive;
   font-size: 40px;
 }
 
-.single-pokemon .pokemon-image {
+.pokemon-link .single-pokemon .pokemon-image {
   height: 150px;
   width: 150px;
 }

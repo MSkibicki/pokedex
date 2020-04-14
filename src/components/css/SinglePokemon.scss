@@ -1,34 +1,39 @@
-.single-pokemon {
-  background-color: #f2f7eb;
-  border-radius: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 4em 2em;
-  height: 500px;
-  width: 450px;
+.pokemon-link {
+  text-decoration: none;
+  color: #000;
 
-  .pokemon-number {
+  .single-pokemon {
+    background-color: #f2f7eb;
+    border-radius: 5%;
     display: flex;
-    width: stretch;
-    width: -moz-available;
-    margin: 0;
-    padding-top: 15px;
-    padding-right: 300px;
-    border-radius: 10px;
-    justify-content: center;
-    padding-bottom: 15px;
-    background: linear-gradient(120deg, #fff, #000);
-  }
+    flex-direction: column;
+    align-items: center;
+    margin: 4em 2em;
+    height: 500px;
+    width: 450px;
 
-  .pokemon-name {
-    font-family: "Lobster", cursive;
-    font-size: 40px;
-  }
+    .pokemon-number {
+      display: flex;
+      width: stretch;
+      width: -moz-available;
+      margin: 0;
+      padding-top: 15px;
+      padding-right: 300px;
+      border-radius: 10px;
+      justify-content: center;
+      padding-bottom: 15px;
+      background: linear-gradient(120deg, #fff, #000);
+    }
 
-  .pokemon-image {
-    height: 150px;
-    width: 150px;
+    .pokemon-name {
+      font-family: "Lobster", cursive;
+      font-size: 40px;
+    }
+
+    .pokemon-image {
+      height: 150px;
+      width: 150px;
+    }
   }
 }
 

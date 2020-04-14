@@ -1,4 +1,4 @@
-.pokemon-list .pokemon {
+.pokemon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,7 +9,7 @@
       flex-wrap: wrap;
 }
 
-.pokemon-list .loading {
+.loading {
   text-align: center;
   margin-top: 10em;
   color: #f2f7eb;

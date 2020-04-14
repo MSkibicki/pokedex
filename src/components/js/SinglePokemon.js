@@ -38,8 +38,8 @@ const SinglePokemon = ({ name, url }) => {
   const { base_experience, height, weight } = pokemonInfo;
 
   return (
-    <div className="single-pokemon">
-      <Link to={`singlePokemonDetails/${pokemonId}`}>
+    <Link className="pokemon-link" to={`singlePokemonDetails/${pokemonId}`}>
+      <div className="single-pokemon">
         <h3 className="pokemon-number">#{pokemonId}</h3>
         {(pokemonInfo || 0) &&
           (pokemonInfo.sprites || 0) &&
@@ -63,8 +63,8 @@ const SinglePokemon = ({ name, url }) => {
         <p>Base experience: {base_experience} points</p>
         <p>Height: {height / 10} meters</p>
         <p>Weight: {weight / 10} kilograms</p>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 

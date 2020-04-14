@@ -12,7 +12,6 @@
 .buttons .button-previous {
   height: 40px;
   width: 150px;
-  background-color: #f2f7eb;
   border-radius: 10px;
   margin-right: 1em;
   background: linear-gradient(120deg, #fff, #000);
@@ -22,7 +21,6 @@
 .buttons .button-next {
   height: 40px;
   width: 150px;
-  background-color: #f2f7eb;
   border-radius: 10px;
   margin-left: 1em;
   background: linear-gradient(120deg, #fff, #000);
