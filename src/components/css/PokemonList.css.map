@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACP,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,YAAY;EAC7B,SAAS,EAAE,IAAI;CAChB;;AACD,AAAA,QAAQ,CAAC;EACP,UAAU,EAAE,MAAM;EAClB,UAAU,EAAE,IAAI;EAChB,KAAK,EAAE,OAAO;EACd,WAAW,EAAE,iBAAiB;CAC/B",
-    "sources": [
-        "PokemonList.scss"
-    ],
-    "names": [],
-    "file": "PokemonList.css"
-}
