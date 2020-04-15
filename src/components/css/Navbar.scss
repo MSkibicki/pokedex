@@ -1,18 +1,17 @@
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background: linear-gradient(120deg, #fff, #000);
-
-//   .pokemon-logo {
-//     height: 180px;
-//     width: 40px;
-//     background: url("../../images/pokedex-logo.jpg");
-//     background-size: cover;
-//   }
+  padding-left: 150px;
 
   .navbar-home-link {
     text-decoration: none;
     color: black;
+  }
+
+  .navbar-title {
+    font-family: "Lobster", cursive;
+    font-size: 36px;
   }
 }

@@ -7,7 +7,6 @@ const Navbar = () => {
     <div className="navbar">
       <Link className="navbar-home-link" to={"/"}>
         <h1 className="navbar-title">Pokedex</h1>
-        {/* <img className="pokemon-logo" alt="pokemon-logo" /> */}
       </Link>
     </div>
   );
