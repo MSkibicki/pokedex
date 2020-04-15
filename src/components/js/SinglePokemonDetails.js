@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
+import "../css/SinglePokemonDetails.scss";
 
 const SinglePokemonDetails = (props) => {
   const [loading, setLoading] = useState(false);
@@ -26,7 +27,6 @@ const SinglePokemonDetails = (props) => {
 
   useEffect(() => {
     let isCancelled = false;
-
     const { pokemonId } = props.match.params;
 
     const getSinglePokemonData = async () => {
@@ -37,7 +37,6 @@ const SinglePokemonDetails = (props) => {
 
       try {
         const result = await axios(detailsUrl);
-
         const pokemonName = result.data.name;
         const pokemonFrontImg = result.data.sprites.front_default;
         const pokemonAbilities = result.data.abilities.map((ability) => {
@@ -129,7 +128,6 @@ const SinglePokemonDetails = (props) => {
         }
       }
     };
-
     getSinglePokemonData();
 
     return () => {
@@ -137,38 +135,76 @@ const SinglePokemonDetails = (props) => {
     };
   }, [props.match.params]);
 
-  if (loading) return "Loading...";
+  if (loading)
+    return (
+      <div className="loading">
+        <h1 className="loading-text">Loading...</h1>
+      </div>
+    );
 
   return (
     <>
       <Navbar />
-      <div>
-        <h1>
-          {pokemonName
-            .toLowerCase()
-            .split(" ")
-            .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-            .join(" ")}
-        </h1>
-        <h3>#{pokemonId}</h3>
-        <img src={pokemonFrontImg} alt="pokemon-front" />
-        <p>Height: {pokemonHeight} meters</p>
-        <p>Weight: {pokemonWeight} kilograms</p>
-        <p>Base Experience: {pokemonExperience} points</p>
-        <p>Speed: {pokemonStats.speed}</p>
-        <p>Special-Defense: {pokemonStats.specialDefense}</p>
-        <p>Special-Attack: {pokemonStats.specialAttack}</p>
-        <p>Defense: {pokemonStats.defense}</p>
-        <p>Attack: {pokemonStats.attack}</p>
-        <p>HP: {pokemonStats.hp}</p>
-        <p>{pokemonDescription}</p>
-        <p>Catch Rate: {pokemonCatchRate}%</p>
-        <p>Egg Group: {pokemonEggGroups}</p>
-        <p>Abilities: {pokemonAbilities}</p>
+      <div className="pokemon-page">
+        <div className="title">
+          <h1 className="individual-name">
+            {pokemonName
+              .toLowerCase()
+              .split(" ")
+              .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+              .join(" ")}
+          </h1>
+          <h1 className="pokemon-id">#{pokemonId}</h1>
+        </div>
+        <div className="base-info">
+          <img
+            className="individual-image"
+            src={pokemonFrontImg}
+            alt="pokemon-front"
+          />
+          <div className="info-group1">
+            <div className="base-stats">
+              <h3>Base stats:</h3>
+              <p>Height: {pokemonHeight} meters</p>
+              <p>Weight: {pokemonWeight} kilograms</p>
+              <p>Base experience: {pokemonExperience} points</p>
+            </div>
+            <div className="additional-stats">
+              <h3>Additional stats:</h3>
+              <p>Speed: {pokemonStats.speed}</p>
+              <p>Special-Defense: {pokemonStats.specialDefense}</p>
+              <p>Special-Attack: {pokemonStats.specialAttack}</p>
+              <p>Defense: {pokemonStats.defense}</p>
+              <p>Attack: {pokemonStats.attack}</p>
+              <p>HP: {pokemonStats.hp}</p>
+            </div>
+          </div>
+        </div>
+        <div className="info-groups">
+          <div className="info-group2">
+            <h3>{pokemonDescription}</h3>
+          </div>
+          <div className="info-group3">
+            <p>
+              <strong>Catch Rate: </strong>
+              {pokemonCatchRate}%
+            </p>
+            <p>
+              <strong>Egg Group: </strong>
+              {pokemonEggGroups}
+            </p>
+            <p>
+              <strong>Abilities: </strong>
+              {pokemonAbilities}
+            </p>
+          </div>
+        </div>
       </div>
-      <Link to={"/"}>
-        <button>Back to main page</button>
-      </Link>
+      <div className="button">
+        <Link to={"/"}>
+          <button className="button-back">Back to main page</button>
+        </Link>
+      </div>
     </>
   );
 };
