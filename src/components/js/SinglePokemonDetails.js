@@ -22,6 +22,7 @@ const SinglePokemonDetails = (props) => {
   const [pokemonEggGroups, setPokemonEggGroups] = useState("");
   const [pokemonCatchRate, setPokemonCatchRate] = useState("");
   const [pokemonId, setPokemonId] = useState("");
+  const [pokemonExperience, setPokemonExperience] = useState("");
 
   useEffect(() => {
     let isCancelled = false;
@@ -48,6 +49,7 @@ const SinglePokemonDetails = (props) => {
         });
         const pokemonHeight = result.data.height / 10;
         const pokemonWeight = result.data.weight / 10;
+        const pokemonExperience = result.data.base_experience;
 
         let { speed, specialDefense, specialAttack, defense, attack, hp } = "";
 
@@ -108,6 +110,7 @@ const SinglePokemonDetails = (props) => {
           setPokemonAbilities(pokemonAbilities);
           setPokemonHeight(pokemonHeight);
           setPokemonWeight(pokemonWeight);
+          setPokemonExperience(pokemonExperience);
           setPokemonEggGroups(eggGroups);
           setPokemonCatchRate(pokemonCatchRate);
           setPokemonStats({
@@ -151,6 +154,7 @@ const SinglePokemonDetails = (props) => {
         <img src={pokemonFrontImg} alt="pokemon-front" />
         <p>Height: {pokemonHeight} meters</p>
         <p>Weight: {pokemonWeight} kilograms</p>
+        <p>Base Experience: {pokemonExperience} points</p>
         <p>Speed: {pokemonStats.speed}</p>
         <p>Special-Defense: {pokemonStats.specialDefense}</p>
         <p>Special-Attack: {pokemonStats.specialAttack}</p>
