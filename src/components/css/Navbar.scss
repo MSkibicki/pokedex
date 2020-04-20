@@ -1,13 +1,15 @@
+@import "./Global.scss";
+
 .navbar {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background: linear-gradient(120deg, #fff, #000);
+  background: linear-gradient(120deg, $white, $black);
   padding-left: 150px;
 
   .navbar-home-link {
     text-decoration: none;
-    color: black;
+    color: $black;
   }
 
   .navbar-title {

@@ -1,3 +1,5 @@
+@import "./Global.scss";
+
 .pokemon {
   display: flex;
   justify-content: space-evenly;
@@ -6,6 +8,6 @@
 .loading {
   text-align: center;
   margin-top: 10em;
-  color: #f2f7eb;
-  text-shadow: 2px 2px 2px black;
+  color: $main-color;
+  text-shadow: 2px 2px 2px $black;
 }

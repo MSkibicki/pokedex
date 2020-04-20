@@ -1,3 +1,5 @@
+@import "./Global.scss";
+
 .buttons {
   display: flex;
   justify-content: center;
@@ -9,8 +11,8 @@
     width: 150px;
     border-radius: 10px;
     margin-right: 1em;
-    background: linear-gradient(120deg, #fff, #000);
-    color: #f2f7eb;
+    background: linear-gradient(120deg, #fff, $black);
+    color: $main-color;
   }
 
   .button-next {
@@ -18,19 +20,19 @@
     width: 150px;
     border-radius: 10px;
     margin-left: 1em;
-    background: linear-gradient(120deg, #fff, #000);
-    color: #f2f7eb;
+    background: linear-gradient(120deg, #fff, $black);
+    color: $main-color;
   }
 
   .button-previous:hover {
     cursor: pointer;
-    box-shadow: 5px 5px 5px black;
+    box-shadow: 5px 5px 5px $black;
     outline: 0;
   }
 
   .button-next:hover {
     cursor: pointer;
-    box-shadow: 5px 5px 5px black;
+    box-shadow: 5px 5px 5px $black;
     outline: 0;
   }
 }

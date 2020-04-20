@@ -1,5 +1,7 @@
+@import "./Global.scss";
+
 .pokemon-page {
-  background-color: #f2f7eb;
+  background-color: $main-color;
   border-radius: 50px;
   margin: 4em auto;
   height: 675px;
@@ -18,7 +20,7 @@
     }
 
     .pokemon-id {
-      color: #9b9e96;
+      color: $additional-color;
     }
   }
 
@@ -69,13 +71,13 @@
     width: 150px;
     border-radius: 10px;
     margin-right: 1em;
-    background: linear-gradient(120deg, #fff, #000);
-    color: #f2f7eb;
+    background: linear-gradient(120deg, $white, $black);
+    color: $main-color;
   }
 
   .button-back:hover {
     cursor: pointer;
-    box-shadow: 5px 5px 5px black;
+    box-shadow: 5px 5px 5px $black;
     outline: 0;
   }
 }
