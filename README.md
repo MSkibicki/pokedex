@@ -15,13 +15,15 @@ Project is created with:
 - React version: 16.13.1
 - React-Router
 - SCSS
+- Axios
+- Prop-Types
 
 ## Setup
 
 To run this project, install it locally using npm:
 
 ```
-$ cd ../pokedex
+$ cd pokedex
 $ npm install
 $ npm start
 ```
