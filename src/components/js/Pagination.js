@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Pagination.scss";
+import PropTypes from "prop-types";
 
 const Pagination = ({ handlePreviousPage, handleNextPage }) => {
   return (
@@ -16,6 +17,11 @@ const Pagination = ({ handlePreviousPage, handleNextPage }) => {
       )}
     </div>
   );
+};
+
+Pagination.propTypes = {
+  handlePreviousPage: PropTypes.func,
+  handleNextPage: PropTypes.func,
 };
 
 export default Pagination;

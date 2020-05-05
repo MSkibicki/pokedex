@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../css/SinglePokemon.scss";
+import PropTypes from "prop-types";
 
 const SinglePokemon = ({ name, url }) => {
   const [pokemonInfo, setPokemonInfo] = useState([]);
@@ -66,6 +67,11 @@ const SinglePokemon = ({ name, url }) => {
       </div>
     </Link>
   );
+};
+
+SinglePokemon.propTypes = {
+  name: PropTypes.string,
+  url: PropTypes.string,
 };
 
 export default SinglePokemon;

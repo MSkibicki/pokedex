@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/PokemonFilter.scss";
+import PropTypes from "prop-types";
 
 const PokemonFilter = ({ handleInput }) => {
   return (
@@ -15,6 +16,10 @@ const PokemonFilter = ({ handleInput }) => {
       />
     </div>
   );
+};
+
+PokemonFilter.propTypes = {
+  handleInput: PropTypes.func,
 };
 
 export default PokemonFilter;
