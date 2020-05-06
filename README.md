@@ -18,6 +18,13 @@ Project is created with:
 - Axios
 - Prop-Types
 
+Technologies used for testing:
+
+- Jest
+- Enzyme
+- Enzyme-Adapter-React-16
+- Sinon
+
 ## Setup
 
 To run this project, install it locally using npm:
