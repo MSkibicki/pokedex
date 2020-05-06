@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="filter"
+>
+  <label
+    htmlFor="pokemon-filter"
+  >
+    Filter pokemon by name.
+  </label>
+  <input
+    className="input"
+    id="filter"
+    name="filter"
+    onChange={[Function]}
+    placeholder="Start typing pokemon name."
+    type="text"
+  />
+</div>
+`;

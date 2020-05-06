@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="buttons"
+>
+  <button
+    className="button-previous"
+    onClick={[Function]}
+  >
+    Previous Page
+  </button>
+  <button
+    className="button-next"
+    onClick={[Function]}
+  >
+    Next Page
+  </button>
+</div>
+`;

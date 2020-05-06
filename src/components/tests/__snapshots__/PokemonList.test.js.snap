@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Fragment>
+  <Navbar />
+  <div
+    className="pokemon-list"
+  >
+    <PokemonFilter
+      handleInput={[Function]}
+    />
+    <div
+      className="pokemon"
+    />
+    <Pagination
+      handleNextPage={null}
+      handlePreviousPage={null}
+    />
+  </div>
+</Fragment>
+`;
