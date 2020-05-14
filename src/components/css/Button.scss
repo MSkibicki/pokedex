@@ -1,0 +1,23 @@
+@import "./Global.scss";
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3em;
+  margin-top: 1em;
+
+  .button-back {
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    margin-right: 1em;
+    background: linear-gradient(120deg, $white, $black);
+    color: $main-color;
+  }
+
+  .button-back:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 5px $black;
+    outline: 0;
+  }
+}
