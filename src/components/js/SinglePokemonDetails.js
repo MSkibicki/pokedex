@@ -1,29 +1,32 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
-import { Link } from "react-router-dom";
-import "../css/SinglePokemonDetails.scss";
+import PokemonInfo from "./PokemonInfo";
+import Button from "./Button";
+import Loading from "./Loading";
 
 const SinglePokemonDetails = (props) => {
   const [loading, setLoading] = useState(false);
-  const [pokemonName, setPokemonName] = useState("");
-  const [pokemonFrontImg, setPokemonFrontImg] = useState("");
-  const [pokemonStats, setPokemonStats] = useState({
-    speed: "",
-    specialDefense: "",
-    specialAttack: "",
-    defense: "",
-    attack: "",
-    hp: "",
+  const [pokemonDetails, setPokemonDetails] = useState({
+    pokemonName: "",
+    pokemonFrontImg: "",
+    pokemonStats: {
+      speed: "",
+      specialDefense: "",
+      specialAttack: "",
+      defense: "",
+      attack: "",
+      hp: "",
+    },
+    pokemonAbilities: "",
+    pokemonDescription: "",
+    pokemonHeight: "",
+    pokemonWeight: "",
+    pokemonEggGroups: "",
+    pokemonCatchRate: "",
+    pokemonId: "",
+    pokemonExperience: "",
   });
-  const [pokemonAbilities, setPokemonAbilities] = useState("");
-  const [pokemonDescription, setPokemonDescription] = useState("");
-  const [pokemonHeight, setPokemonHeight] = useState("");
-  const [pokemonWeight, setPokemonWeight] = useState("");
-  const [pokemonEggGroups, setPokemonEggGroups] = useState("");
-  const [pokemonCatchRate, setPokemonCatchRate] = useState("");
-  const [pokemonId, setPokemonId] = useState("");
-  const [pokemonExperience, setPokemonExperience] = useState("");
 
   useEffect(() => {
     let isCancelled = false;
@@ -81,14 +84,14 @@ const SinglePokemonDetails = (props) => {
 
         speciesResult.data.flavor_text_entries.some((flavor) => {
           if (flavor.language.name === "en") {
-            setPokemonDescription(flavor.flavor_text);
+            setPokemonDetails({ pokemonDescription: flavor.flavor_text });
             return null;
           } else {
             return console.log("text not found");
           }
         });
 
-        const eggGroups = speciesResult.data["egg_groups"]
+        const pokemonEggGroups = speciesResult.data["egg_groups"]
           .map((group) => {
             return group.name
               .toLowerCase()
@@ -104,23 +107,25 @@ const SinglePokemonDetails = (props) => {
 
         if (!isCancelled) {
           setLoading(false);
-          setPokemonName(pokemonName);
-          setPokemonFrontImg(pokemonFrontImg);
-          setPokemonAbilities(pokemonAbilities);
-          setPokemonHeight(pokemonHeight);
-          setPokemonWeight(pokemonWeight);
-          setPokemonExperience(pokemonExperience);
-          setPokemonEggGroups(eggGroups);
-          setPokemonCatchRate(pokemonCatchRate);
-          setPokemonStats({
-            speed,
-            specialDefense,
-            specialAttack,
-            defense,
-            attack,
-            hp,
+          setPokemonDetails({
+            pokemonName,
+            pokemonFrontImg,
+            pokemonAbilities,
+            pokemonHeight,
+            pokemonWeight,
+            pokemonExperience,
+            pokemonEggGroups,
+            pokemonCatchRate,
+            pokemonStats: {
+              speed,
+              specialDefense,
+              specialAttack,
+              defense,
+              attack,
+              hp,
+            },
+            pokemonId,
           });
-          setPokemonId(pokemonId);
         }
       } catch (e) {
         if (!isCancelled) {
@@ -137,74 +142,14 @@ const SinglePokemonDetails = (props) => {
 
   if (loading)
     return (
-      <div className="loading">
-        <h1 className="loading-text">Loading...</h1>
-      </div>
+      <Loading />
     );
 
   return (
     <>
       <Navbar />
-      <div className="pokemon-page">
-        <div className="title">
-          <h1 className="individual-name">
-            {pokemonName
-              .toLowerCase()
-              .split(" ")
-              .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-              .join(" ")}
-          </h1>
-          <h1 className="pokemon-id">#{pokemonId}</h1>
-        </div>
-        <div className="base-info">
-          <img
-            className="individual-image"
-            src={pokemonFrontImg}
-            alt="pokemon-front"
-          />
-          <div className="info-group1">
-            <div className="base-stats">
-              <h3>Base stats:</h3>
-              <p>Height: {pokemonHeight} meters</p>
-              <p>Weight: {pokemonWeight} kilograms</p>
-              <p>Base experience: {pokemonExperience} points</p>
-            </div>
-            <div className="additional-stats">
-              <h3>Additional stats:</h3>
-              <p>Speed: {pokemonStats.speed}</p>
-              <p>Special-Defense: {pokemonStats.specialDefense}</p>
-              <p>Special-Attack: {pokemonStats.specialAttack}</p>
-              <p>Defense: {pokemonStats.defense}</p>
-              <p>Attack: {pokemonStats.attack}</p>
-              <p>HP: {pokemonStats.hp}</p>
-            </div>
-          </div>
-        </div>
-        <div className="info-groups">
-          <div className="info-group2">
-            <h3>{pokemonDescription}</h3>
-          </div>
-          <div className="info-group3">
-            <p>
-              <strong>Catch Rate: </strong>
-              {pokemonCatchRate}%
-            </p>
-            <p>
-              <strong>Egg Group: </strong>
-              {pokemonEggGroups}
-            </p>
-            <p>
-              <strong>Abilities: </strong>
-              {pokemonAbilities}
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="button">
-        <Link to={"/"}>
-          <button className="button-back">Back to main page</button>
-        </Link>
-      </div>
+      <PokemonInfo pokemonDetails={pokemonDetails} />
+      <Button text="Back to main page" />
     </>
   );
 };

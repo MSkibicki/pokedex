@@ -5,6 +5,7 @@ import Pagination from "./Pagination";
 import PokemonFilter from "./PokemonFilter";
 import Navbar from "./Navbar";
 import "../css/PokemonList.scss";
+import Loading from "./Loading";
 
 const PokemonList = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -62,9 +63,7 @@ const PokemonList = () => {
 
   if (loading)
     return (
-      <div className="loading">
-        <h1 className="loading-text">Loading...</h1>
-      </div>
+      <Loading />
     );
   return (
     <>
