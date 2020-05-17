@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/PokemonInfo.scss";
+import PropTypes from "prop-types";
 
 const PokemonInfo = ({ pokemonDetails }) => {
   const {
@@ -80,6 +81,22 @@ const PokemonInfo = ({ pokemonDetails }) => {
       </div>
     </div>
   );
+};
+
+PokemonInfo.propTypes = {
+  pokemonDetails: PropTypes.shape({
+    pokemonName: PropTypes.string,
+    pokemonId: PropTypes.string,
+    pokemonFrontImg: PropTypes.string,
+    pokemonHeight: PropTypes.number,
+    pokemonWeight: PropTypes.number,
+    pokemonExperience: PropTypes.number,
+    pokemonStats: PropTypes.object,
+    pokemonDescription: PropTypes.string,
+    pokemonCatchRate: PropTypes.number,
+    pokemonEggGroups: PropTypes.string,
+    pokemonAbilities: PropTypes.array,
+  }),
 };
 
 export default PokemonInfo;

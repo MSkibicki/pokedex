@@ -8,24 +8,24 @@ import Loading from "./Loading";
 const SinglePokemonDetails = (props) => {
   const [loading, setLoading] = useState(false);
   const [pokemonDetails, setPokemonDetails] = useState({
-    pokemonName: "",
-    pokemonFrontImg: "",
+    pokemonName: null,
+    pokemonFrontImg: null,
     pokemonStats: {
-      speed: "",
-      specialDefense: "",
-      specialAttack: "",
-      defense: "",
-      attack: "",
-      hp: "",
+      speed: null,
+      specialDefense: null,
+      specialAttack: null,
+      defense: null,
+      attack: null,
+      hp: null,
     },
-    pokemonAbilities: "",
-    pokemonDescription: "",
-    pokemonHeight: "",
-    pokemonWeight: "",
-    pokemonEggGroups: "",
-    pokemonCatchRate: "",
-    pokemonId: "",
-    pokemonExperience: "",
+    pokemonAbilities: null,
+    pokemonDescription: null,
+    pokemonHeight: null,
+    pokemonWeight: null,
+    pokemonEggGroups: null,
+    pokemonCatchRate: null,
+    pokemonId: null,
+    pokemonExperience: null,
   });
 
   useEffect(() => {
@@ -140,10 +140,7 @@ const SinglePokemonDetails = (props) => {
     };
   }, [props.match.params]);
 
-  if (loading)
-    return (
-      <Loading />
-    );
+  if (loading) return <Loading />;
 
   return (
     <>
