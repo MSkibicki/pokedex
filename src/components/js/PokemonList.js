@@ -61,10 +61,7 @@ const PokemonList = () => {
     return pokemon.name.toLowerCase().includes(inputValue.toLowerCase());
   });
 
-  if (loading)
-    return (
-      <Loading />
-    );
+  if (loading) return <Loading />;
   return (
     <>
       <Navbar />

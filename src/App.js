@@ -11,7 +11,11 @@ const App = () => {
       <>
         <Switch>
           <Route exact path="/" component={PokemonList} />
-          <Route exact path="/singlePokemonDetails/:pokemonId" component={SinglePokemonDetails} />
+          <Route
+            exact
+            path="/singlePokemonDetails/:pokemonId"
+            component={SinglePokemonDetails}
+          />
         </Switch>
       </>
     </Router>
