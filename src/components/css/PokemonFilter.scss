@@ -39,14 +39,36 @@
 }
 
 @media (max-width: 550px) {
-  label {
-    margin-bottom: 1em;
-    margin-right: 0;
+  .filter {
+    label {
+      margin-bottom: 1em;
+      margin-right: 0;
+    }
   }
 }
 
 @media (max-width: 550px) {
-  .input {
-    margin-left: 0;
+  .filter {
+    .input {
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .filter {
+    .input {
+      margin: 0 auto;
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .filter {
+    .input {
+      margin: 0 auto;
+      width: 80%;
+    }
   }
 }

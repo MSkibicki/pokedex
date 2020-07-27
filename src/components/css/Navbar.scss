@@ -17,3 +17,10 @@
     font-size: 36px;
   }
 }
+
+@media (max-width: 650px) {
+  .navbar {
+    justify-content: center;
+    padding-left: 0px;
+  }
+}

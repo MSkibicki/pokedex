@@ -77,13 +77,77 @@
 }
 
 @media (max-width: 1050px) {
-  .single-pokemon {
-    width: 350px;
+  .pokemon-link {
+    .single-pokemon {
+      width: 350px;
+    }
   }
 }
 
 @media (max-width: 850px) {
-  .single-pokemon {
-    width: 450px;
+  .pokemon-link {
+    .single-pokemon {
+      width: 450px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .pokemon-link {
+    .single-pokemon {
+      width: 390px;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .pokemon-link {
+    .single-pokemon {
+      width: 340px;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .pokemon-link {
+    .single-pokemon {
+      margin: 4em 0;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .pokemon-link {
+    .single-pokemon {
+      width: 310px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .pokemon-link {
+    .single-pokemon {
+      width: 280px;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .pokemon-link {
+    .single-pokemon {
+      .pokemon-number {
+        padding-right: 260px;
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .pokemon-link {
+    .single-pokemon {
+      .pokemon-number {
+        padding-right: 240px;
+      }
+    }
   }
 }
